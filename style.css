@@ -1,0 +1,135 @@
+:root {
+  font-size: 16px;
+  --main-black: #000000;
+  --main-green: #113066;
+}
+
+html, body {overflow:hidden; }
+body {position:relative}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+
+input, button {
+  background: transparent;
+  border: none;
+  outline: 0;
+}
+
+main {
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  gap: 2.375rem;
+
+  background: linear-gradient(45deg, rgb(0, 0, 0) 0%, rgba(65,67,69,1) 100%);
+}
+
+main > h1 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 2.369rem;
+  margin: 0 16px;
+  text-align: center;
+}
+
+section {
+  position: relative;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.375rem 1rem;
+  margin: 0 1rem;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0, 0.24);
+
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.actions-area {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.password-output {
+  color: var(--main-black);
+  font-size: 1.333rem;
+  padding: 10px 0;
+  border: 1px solid var(--main-black);
+  border-radius: 6px;
+  text-align: center; 
+  width: 100%;
+}
+
+.actions__generate, .actions__copy {
+  border: 1px solid var(--main-black);
+  border-radius: 6px;
+  width: 45px;
+  height: 45px;
+
+  transition: all .45s;
+  cursor: pointer;
+}
+
+.actions__generate:hover, .actions__copy:hover {
+  background: var(--main-black);
+  border: none;
+  box-shadow: 4px 2px 4px rgba(0,0,0, 0.24);
+}
+
+.actions__generate > svg > path{
+  fill: var(--main-black);
+  transition: all .45s;
+}
+
+.actions__generate:hover > svg > path{
+  fill: #fff;
+}
+
+.actions__copy svg > path {
+  stroke: var(--main-black);
+}
+
+.actions__copy:hover svg > path {
+  stroke: #fff;
+}
+
+.popup {
+  position: absolute;
+  background: var(--main-green);
+  font-family: 'IBM Plex Mono', monospace;
+  text-align: center;
+  width: 382px;
+  font-size: 1.333rem;
+  padding: 0.875rem 0;
+  justify-self: center;
+  bottom: 28px;
+  transform: translateY(200%);
+}
+
+.popup-animation {
+  animation: pop 2s linear;
+}
+
+@keyframes pop {
+  0% {
+    transform: translateY(200%);
+  }
+  25% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(150%);
+  }
+  100% {
+    transform: translateY(200%);
+  }
+}
